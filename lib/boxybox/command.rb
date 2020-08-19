@@ -3,6 +3,7 @@
 require 'forwardable'
 
 module Boxybox
+  # This is generated from the TTY application bootstrap and is used to access the commands available to this app
   class Command
     extend Forwardable
 

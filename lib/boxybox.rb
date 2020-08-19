@@ -1,5 +1,6 @@
-require "boxybox/version"
-require "boxybox/boxybox"
+# frozen_string_literal: true
+
+require 'boxybox/version'
 
 module Boxybox
   class Error < StandardError; end
