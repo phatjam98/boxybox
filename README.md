@@ -1,8 +1,6 @@
 # Boxybox
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/boxybox`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Need to create boxes in boxes in boxes in boxes?  Great news! You've found a gem that does just that.  This is a dive into the world of command line apps using TTY focusing on the tty-box and supporting gems.  This has been done in a way to extend out the customization of each box quite easily by adding additional root properties to the boxes.  For the purpose of this exercise I've chosen to stick with just the examples given in the challenge as well as the ability to craft new box nesting patterns by supplying custom JSON configs.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 
