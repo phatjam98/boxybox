@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Travis Carter']
   spec.email         = ['travis.carter79@outlook.com']
 
-  spec.summary       = 'Box generator for FilmFreeway at home code challenge'
+  spec.summary       = 'Box generator for an at home code challenge'
   spec.description   = 'Draws terminal ascii boxes, and boxes within boxes'
   spec.homepage      = 'https://github.com/phatjam98/boxybox'
 
