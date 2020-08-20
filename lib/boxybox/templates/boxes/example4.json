@@ -1,0 +1,49 @@
+{
+  "boxes": {
+    "direction": "horizontal",
+    "children": [
+      {
+        "direction": "vertical",
+        "children": [
+          {
+            "content": " "
+          },
+          {
+            "content": " "
+          },
+          {
+            "content": " "
+          }
+        ]
+      },
+      {
+        "direction": "vertical",
+        "children": [
+          {
+            "content": " "
+          },
+          {
+            "content": " "
+          },
+          {
+            "content": " "
+          }
+        ]
+      },
+      {
+        "direction": "vertical",
+        "children": [
+          {
+            "content": " "
+          },
+          {
+            "content": " "
+          },
+          {
+            "content": " "
+          }
+        ]
+      }
+    ]
+  }
+}
