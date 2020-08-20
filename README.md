@@ -20,7 +20,123 @@ Or install it yourself as:
 
 ## Usage
 
+To print one of the 4 provided examples along with the config json used to construct the boxes use the following command
+```shell script
+$ boxybox boxes -e example1 -p
+```
+This is helpful when wanting to understand the config syntax with clear examples.
 
+```shell script
+$ boxybox boxes -f ~/some_config.json
+```
+
+Use the above command if you wish to pass in a custom JSON config.
+
+#### Configuration
+
+The following example shows how boxes can be configured using JSON.  There is a top level `boxes` object which represents our outer or parent box.
+Each box may have children boxes in a horizontal or vertical pattern which is designated by the `direction` property.  `children` are given as an array with content boxes using the `content` propery.  The examples given follow the examples given in the project requirements, however content can be populated with text and all boxes will scale properly.
+
+While this may be a bit overkill, using JSON in this way allows for more complicated structures in the future.  As this gem utilizes the `tty` toolset, specifically the `tty-box` gem, many properties may be passed through and included in the future with relative ease.
+
+```json
+{
+  "boxes": {
+    "direction": "vertical",
+    "children": [
+      {
+        "direction": "horizontal",
+        "children": [
+          {
+            "direction": "vertical",
+            "children": [
+              {
+                "content": " "
+              },
+              {
+                "content": " "
+              }
+            ]
+          },
+          {
+            "content": " "
+          },
+          {
+            "content": " "
+          }
+        ]
+      },
+      {
+        "content": " "
+      },
+      {
+        "content": " "
+      },
+      {
+        "direction": "horizontal",
+        "children": [
+          {
+            "content": " "
+          },
+          {
+            "content": " "
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+The above config will print out the following:
+
+```text
++-------------------------+
+|                         |
+| +---------------------+ |
+| |                     | |
+| | +-------++---++---+ | |
+| | |       ||   ||   | | |
+| | | +---+ ||   ||   | | |
+| | | |   | ||   ||   | | |
+| | | |   | |+---++---+ | |
+| | | |   | |           | |
+| | | +---+ |           | |
+| | | +---+ |           | |
+| | | |   | |           | |
+| | | |   | |           | |
+| | | |   | |           | |
+| | | +---+ |           | |
+| | |       |           | |
+| | |       |           | |
+| | +-------+           | |
+| |                     | |
+| +---------------------+ |
+| +---+                   |
+| |   |                   |
+| |   |                   |
+| |   |                   |
+| +---+                   |
+| +---+                   |
+| |   |                   |
+| |   |                   |
+| |   |                   |
+| +---+                   |
+| +------------+          |
+| |            |          |
+| | +---++---+ |          |
+| | |   ||   | |          |
+| | |   ||   | |          |
+| | |   ||   | |          |
+| | +---++---+ |          |
+| |            |          |
+| +------------+          |
+|                         |
+|                         |
+|                         |
+|                         |
++-------------------------+
+```
 
 ## Development
 

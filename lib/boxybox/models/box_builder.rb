@@ -10,12 +10,17 @@ class BoxBuilder
 
   attr_accessor :direction, :children, :content
 
+  # @param [Object] config
+  # @return [BoxBuilder] new instance of BoxBuilder
   def initialize(config)
     @direction = config['direction']
     @children = config['children']
     @content = config['content']
   end
 
+  # This kicks off the parsing of the input JSON and returns the nested boxes as a string
+  # @param [JSON] json_string input to create boxes
+  # @return [String] will return a multiline string of ascii boxes
   def self.create_from_json(json_string)
     config = JSON.parse(json_string)
     box_builder = BoxBuilder.new(config['boxes'])
@@ -23,6 +28,8 @@ class BoxBuilder
     box_builder.create_boxes
   end
 
+  # This is the recursive method that craws down the tree to create the boxes
+  # @return [Strings]
   def create_boxes
     unless @children.nil?
       child_boxes = []
@@ -39,6 +46,9 @@ class BoxBuilder
     @content = make_box(@content)
   end
 
+  # Wrapper around the TTY::Box module.  This will be a prime target for expanded style choices and using more of the
+  # customizations available within the TTY gem set
+  # @return [Strings] ascii box
   def make_box(content)
     TTY::Box.frame(content, padding: 1, border: :ascii)
   end

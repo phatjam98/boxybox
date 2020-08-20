@@ -3,6 +3,20 @@ require 'tty-box'
 require 'boxybox/models/box_builder'
 
 describe BoxBuilder do
+  #TODO: expand these tests to include edge cases.  Violations of the json schema will cause failures.  This may not be
+  # too big a worry as we want well formed config to create well structured boxes.  More tests are needed here in any
+  # case
+  describe '#create_from_json' do
+    let(:json_string) { IO.read('spec/support/input_example.json')}
+    let(:output) { IO.read('spec/support/output_example')}
+
+    subject { BoxBuilder.create_from_json(json_string) }
+
+    it 'should return boxes' do
+      expect(subject).to eq output
+    end
+  end
+
   describe '#merge_boxes' do
     subject { BoxBuilder.merge_boxes(*input) }
 

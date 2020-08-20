@@ -26,6 +26,8 @@ module Boxybox
     method_option :example, aliases: '-e', type: :string,
                             desc: 'Select example 1 to 4',
                             banner: 'example1', enum: %w(example1 example2 example3 example4)
+    method_option :print_example, aliases: '-p', type: :boolean,
+                                  desc: 'Select the example json to output to terminal.'
 
     def boxes(input = nil)
       if options[:help]

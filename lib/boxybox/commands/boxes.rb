@@ -20,6 +20,7 @@ module Boxybox
         elsif @options['example']
           file_path = "lib/boxybox/templates/boxes/#{@options['example']}.json"
           json_str = IO.read(file_path)
+          output.puts json_str if @options['print_example']
         end
 
         boxes = BoxBuilder.create_from_json(json_str)
